@@ -64,4 +64,13 @@ export const targetElements = [
       origin: "bottom",
     },
   },
+  {
+    element: ".load-hidden",
+    animation: {
+      delay: 200,
+      distance: "30px",
+      origin: "bottom",
+      interval: 100,
+    },
+  },
 ];
