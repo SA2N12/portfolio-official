@@ -1,0 +1,1064 @@
+<!--
+  Hello!
+  -
+  Simplefolio is a clean and responsive portfolio template for Developers!
+  Created by Jacobo Martinez.
+  -
+  Github Repo: https://github.com/cobiwave/simplefolio/
+  Readme: https://github.com/cobiwave/simplefolio/README.md
+  -
+  For business & inquires, contact me -> jacobojavier98@gmail.com
+-->
+<!DOCTYPE html>
+<html lang="en" class="sr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+
+    <!-- Todo: put here your site title -->
+    <title>Jules Le Corre | Développeur</title>
+    <!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
+    <meta name="keywords" content="[username], [name], skill" />
+    <!-- Todo: improve your SEO by adding a small description of you -->
+    <meta name="description" content="[Your name here] | Developer" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.scss" />
+    <script
+      defer
+      src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
+    ></script>
+
+    <!-- Todo: remove the below script once you finish your portfolio -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+
+  <!DOCTYPE html>
+  <html lang="fr">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Beway Intranet</title>
+
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+          background: linear-gradient(180deg, var(--primary-blue-soft-2) 0%, #ffffff 100%);
+          color: var(--text-dark);
+          line-height: 1.6;
+        }
+
+        .container {
+          width: min(1100px, 92%);
+          margin: auto;
+          padding: 40px 28px;
+        }
+
+        header {
+          position: relative;
+          min-height: 100vh;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+          align-items: center;
+          padding: 80px 60px 140px;
+          background: var(--primary-blue);
+          color: white;
+          clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .header-video {
+          width: 100%;
+          max-width: 600px;
+          justify-self: end;
+        }
+
+        .header-video video {
+          width: 100%;
+          border-radius: 12px;
+          border: 2px solid rgba(255, 255, 255, 0.35);
+          box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+        }
+
+        .header-content {
+          text-align: left;
+        }
+
+        .header-content h1 {
+          font-size: 4rem;
+          margin-bottom: 0px;
+          line-height: 1.1;
+        }
+
+        .header-content .subtitle {
+          font-size: 1.5rem;
+          opacity: 0.85;
+          margin-bottom: 0px;
+          font-weight: 500;
+        }
+
+        .header-content p {
+          font-size: 1.35rem;
+          opacity: 0.95;
+          margin-bottom: 15px;
+          line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+          header {
+            grid-template-columns: 1fr;
+            padding: 60px 20px 110px;
+            gap: 30px;
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+          }
+
+          .header-video {
+            justify-self: center;
+          }
+
+          .header-content {
+            text-align: center;
+          }
+
+          .header-content h1 {
+            font-size: 3rem;
+          }
+
+          .header-content p {
+            font-size: 1.15rem;
+          }
+        }
+
+        .back-btn {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 12px 18px;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 999px;
+          font-size: 1.2rem;
+          font-weight: 600;
+          backdrop-filter: blur(2px);
+          opacity: 0.9;
+          transition: opacity 0.2s ease, background 0.2s ease, transform 0.2s ease;
+        }
+
+        .back-btn:hover {
+          opacity: 1;
+          background: rgba(255, 255, 255, 0.22);
+          transform: translateX(-2px);
+        }
+
+        section {
+          min-height: 50vh;
+          display: flex;
+          align-items: center;
+          padding: 60px 0;
+        }
+
+        section:nth-of-type(odd) {
+          background: var(--primary-blue-soft-2);
+        }
+
+        section:nth-of-type(even) {
+          background: #ffffff;
+        }
+
+        h2 {
+          margin-bottom: 20px;
+          font-size: 2.2rem;
+          color: #000;
+        }
+
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+        }
+
+        .card {
+          background: linear-gradient(160deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+          padding: 24px;
+          border-radius: 14px;
+          color: white;
+          box-shadow: 0 14px 30px rgba(37, 99, 235, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .tech {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          justify-content: center;
+          color: var(--text-dark);
+        }
+
+        .tech span {
+          background: var(--primary-blue);
+          color: #fff;
+          padding: 8px 12px;
+          border-radius: 999px;
+          font-size: 0.9rem;
+          font-weight: 600;
+        }
+
+        ul {
+          list-style: none;
+          display: grid;
+          gap: 12px;
+        }
+
+        ul li {
+          background: #fff;
+          border-left: 4px solid var(--primary-blue);
+          border-radius: 10px;
+          padding: 14px 16px;
+          box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+        }
+
+        .context-list {
+          display: grid;
+          gap: 20px;
+          margin-top: 10px;
+        }
+
+        .project-context {
+          position: relative;
+          background:
+            radial-gradient(circle at 10% 15%, rgba(100, 116, 139, 0.12), transparent 32%),
+            radial-gradient(circle at 90% 80%, rgba(71, 85, 105, 0.10), transparent 36%),
+            linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+          overflow: hidden;
+        }
+
+        .project-context::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background-image: linear-gradient(to right, rgba(100, 116, 139, 0.05) 1px, transparent 1px);
+          background-size: 36px 36px;
+          mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 92%);
+        }
+
+        .project-context .container {
+          position: relative;
+          z-index: 1;
+        }
+
+        .context-intro {
+          max-width: 760px;
+          margin: 0 auto 28px;
+          padding: 14px 18px;
+          border: 1px solid rgba(14, 165, 233, 0.35);
+          border-radius: 12px;
+          background: linear-gradient(120deg, rgba(224, 242, 254, 0.75), rgba(239, 246, 255, 0.85));
+          color: #0b3555;
+          text-align: center;
+          font-size: 1.6rem;
+          line-height: 1.7;
+        }
+
+        .project-context .context-list {
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 22px;
+          align-items: stretch;
+        }
+
+        .project-context .context-item {
+          grid-template-columns: auto 1fr;
+          justify-items: start;
+          text-align: left;
+          align-items: start;
+          gap: 16px;
+          padding: 22px 20px;
+          border: 1px solid rgba(14, 165, 233, 0.22);
+          border-radius: 14px;
+          border-bottom: 1px solid rgba(14, 165, 233, 0.22);
+          background: rgba(255, 255, 255, 0.86);
+          backdrop-filter: blur(2px);
+          box-shadow: 0 10px 28px rgba(14, 52, 104, 0.08);
+          transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .project-context .context-item:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 34px rgba(14, 52, 104, 0.15);
+          border-color: rgba(14, 165, 233, 0.45);
+        }
+
+        .project-context .context-icon {
+          width: 62px;
+          height: 62px;
+          border: 1px solid rgba(14, 165, 233, 0.25);
+          background: linear-gradient(145deg, var(--context-accent-soft), var(--primary-blue-soft));
+          color: #0369a1;
+          box-shadow: 0 8px 18px rgba(14, 165, 233, 0.2);
+        }
+
+        .project-context .context-text h3 {
+          font-size: 1.35rem;
+          margin-bottom: 8px;
+        }
+
+        .project-context .context-text p {
+          max-width: none;
+          color: #243447;
+        }
+
+        .intranet-projects {
+          background: #ffffff;
+        }
+
+        .intranet-projects .project-wrapper {
+          margin-bottom: 0;
+        }
+
+        .intranet-projects .row {
+          margin-bottom: 60px;
+          align-items: center;
+        }
+
+        .intranet-projects .row:last-child {
+          margin-bottom: 0;
+        }
+
+        .intranet-projects .project-wrapper__text {
+          text-align: left;
+        }
+
+        .intranet-projects .project-wrapper__text-title {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 18px;
+          font-weight: 900;
+        }
+
+        .intranet-projects .project-wrapper__text-title span {
+          font-weight: 900;
+        }
+
+        .intranet-projects .project-wrapper__text-title i {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          color: #1e40af;
+          background: linear-gradient(145deg, #eff6ff, #dbeafe);
+          border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .intranet-projects .project-wrapper__text .mb-4 {
+          color: #243447;
+          line-height: 1.75;
+        }
+
+        .intranet-projects .project-wrapper__image {
+          width: 100%;
+        }
+
+        .intranet-projects .thumbnail {
+          overflow: hidden;
+        }
+
+        .intranet-projects .thumbnail img {
+          width: 100%;
+          display: block;
+        }
+
+        .intranet-projects .thumbnail.excel-thumb {
+          max-width: 380px;
+          margin: 0 auto;
+        }
+
+        .intranet-projects .image-caption {
+          margin-top: 10px;
+          color: #475569;
+          font-size: 0.95rem;
+          text-align: center;
+          font-weight: 600;
+        }
+
+        .intranet-projects .view-stack {
+          position: relative;
+          min-height: 260px;
+          width: min(480px, 100%);
+          margin: 0 auto;
+        }
+
+        .intranet-projects .view-stack .view-card {
+          position: absolute;
+          width: 72%;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .intranet-projects .view-stack .view-card:first-child {
+          top: 0;
+          left: 0;
+          z-index: 2;
+          transform: rotate(-2deg);
+        }
+
+        .intranet-projects .view-stack .view-card:last-child {
+          right: 0;
+          bottom: 0;
+          z-index: 1;
+          transform: rotate(2deg);
+        }
+
+        .intranet-projects .view-stack:hover .view-card:first-child {
+          transform: rotate(-3deg) translateY(-4px);
+        }
+
+        .intranet-projects .view-stack:hover .view-card:last-child {
+          transform: rotate(3deg) translateY(4px);
+        }
+
+        .intranet-projects .view-stack .thumbnail {
+          box-shadow: 0 10px 26px rgba(15, 23, 42, 0.18);
+          background: #fff;
+        }
+
+        .intranet-projects .view-stack .image-caption {
+          margin-top: 8px;
+          font-size: 0.9rem;
+        }
+
+        .tech-environment {
+          position: relative;
+          background:
+            radial-gradient(circle at 12% 12%, rgba(100, 116, 139, 0.11), transparent 34%),
+            radial-gradient(circle at 88% 78%, rgba(71, 85, 105, 0.10), transparent 36%),
+            linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+          overflow: hidden;
+        }
+
+        .tech-environment::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background-image: linear-gradient(to right, rgba(100, 116, 139, 0.05) 1px, transparent 1px);
+          background-size: 34px 34px;
+          mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.86), transparent 93%);
+        }
+
+        .tech-environment .container {
+          position: relative;
+          z-index: 1;
+        }
+
+        .tech-intro {
+          max-width: 760px;
+          margin: 0 auto 26px;
+          padding: 14px 18px;
+          border: 1px solid rgba(37, 99, 235, 0.24);
+          border-radius: 12px;
+          background: linear-gradient(120deg, rgba(224, 242, 254, 0.7), rgba(239, 246, 255, 0.88));
+          color: #1e3a5f;
+          text-align: center;
+          line-height: 1.7;
+        }
+
+        .tech-environment .context-list.grid-2x2 {
+          grid-template-columns: repeat(2, minmax(260px, 1fr));
+          gap: 20px;
+        }
+
+        .tech-environment .context-item {
+          grid-template-columns: auto 1fr;
+          justify-items: start;
+          text-align: left;
+          align-items: start;
+          gap: 14px;
+          padding: 22px 18px;
+          border: 1px solid rgba(37, 99, 235, 0.2);
+          border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+          border-radius: 14px;
+          background: rgba(255, 255, 255, 0.92);
+          box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+          transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .tech-environment .context-item:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14);
+          border-color: rgba(14, 165, 233, 0.4);
+        }
+
+        .tech-environment .context-icon {
+          width: 60px;
+          height: 60px;
+          border: 1px solid rgba(37, 99, 235, 0.25);
+          background: linear-gradient(145deg, #eff6ff, #dbeafe);
+          color: #1e40af;
+          box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
+        }
+
+        .tech-environment .context-text h3 {
+          margin-bottom: 8px;
+          font-size: 1.3rem;
+          font-weight: 900;
+        }
+
+        .tech-environment .context-text p {
+          max-width: none;
+          color: #263447;
+        }
+
+        .db-schema {
+          position: relative;
+          background:
+            radial-gradient(circle at 14% 10%, rgba(100, 116, 139, 0.10), transparent 34%),
+            radial-gradient(circle at 86% 84%, rgba(71, 85, 105, 0.09), transparent 34%),
+            linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+          overflow: hidden;
+          margin-bottom: 48px;
+        }
+
+        .db-schema::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background-image: linear-gradient(to bottom, rgba(100, 116, 139, 0.05) 1px, transparent 1px);
+          background-size: 100% 34px;
+          mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.86), transparent 94%);
+        }
+
+        .db-schema .container {
+          position: relative;
+          z-index: 1;
+        }
+
+        .db-schema-intro {
+          margin: 0 0 20px;
+          padding: 14px 18px;
+          border-radius: 12px;
+          background: linear-gradient(120deg, rgba(239, 246, 255, 0.92), rgba(224, 242, 254, 0.78));
+          color: #1e3a5f;
+          text-align: left;
+          line-height: 1.7;
+        }
+
+        .db-schema-intro.load-hidden {
+          border: 1px solid rgba(37, 99, 235, 0.22);
+        }
+
+        .db-schema-layout {
+          display: grid;
+          grid-template-columns: minmax(300px, 1fr) minmax(380px, 1.2fr);
+          gap: 22px;
+          align-items: start;
+        }
+
+        .db-schema-text {
+          display: grid;
+          gap: 0;
+        }
+
+        .db-schema-lists {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 16px;
+          margin-bottom: 22px;
+        }
+
+        .db-schema-group {
+          background: transparent;
+          border-left: 4px solid #2563eb;
+          border-radius: 0;
+          padding: 12px 0 12px 18px;
+        }
+
+        .db-schema-group.load-hidden {
+          background: rgba(255, 255, 255, 0.9);
+          border-left: 4px solid #2563eb;
+          border-radius: 12px;
+          padding: 20px;
+        }
+
+        .db-schema-group h4 {
+          margin: 0 0 14px;
+          color: #1d4ed8;
+          font-size: 1.15rem;
+          font-weight: 900;
+          text-align: left;
+        }
+
+        .db-pill-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .db-pill-list li {
+          background: transparent;
+          color: #2563eb;
+          border: 1px solid #2563eb;
+          border-radius: 999px;
+          padding: 8px 14px;
+          font-weight: 700;
+          font-size: 0.95rem;
+          transition: all 0.25s ease;
+        }
+
+        .db-pill-list li:hover {
+          background: #2563eb;
+          color: #ffffff;
+        }
+
+        .schema-image-wrap {
+          margin: 0 auto;
+          width: min(1080px, 100%);
+          border-radius: 14px;
+          padding: 12px;
+        }
+
+        .schema-image-wrap img {
+          width: 100%;
+          display: block;
+          border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+          .context-intro {
+            margin-bottom: 20px;
+            font-size: 1rem;
+          }
+
+          .project-context .context-item {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            text-align: center;
+          }
+
+          .intranet-projects .row {
+            margin-bottom: 40px;
+          }
+
+          .intranet-projects .view-stack {
+            min-height: auto;
+            display: grid;
+            gap: 16px;
+          }
+
+          .intranet-projects .view-stack .view-card {
+            position: static;
+            width: 100%;
+            transform: none !important;
+          }
+
+          .tech-intro {
+            margin-bottom: 18px;
+            font-size: 0.98rem;
+          }
+
+          .tech-environment .context-item {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            text-align: center;
+          }
+
+          .tech-environment .context-list.grid-2x2 {
+            grid-template-columns: 1fr;
+          }
+
+          .db-schema-intro {
+            margin-bottom: 16px;
+            font-size: 0.98rem;
+            text-align: center;
+          }
+
+          .db-pill-list {
+            justify-content: center;
+          }
+
+          .db-schema-layout {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .context-item {
+          display: grid;
+          grid-template-columns: 1fr;
+          justify-items: center;
+          text-align: center;
+          gap: 16px;
+          align-items: center;
+          padding: 16px 0;
+          border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .context-list.grid-2x2 .context-item {
+          border: 1px solid rgba(37, 99, 235, 0.25);
+          border-radius: 12px;
+          padding: 24px 16px;
+          border-bottom: 1px solid rgba(37, 99, 235, 0.25);
+        }
+
+        .context-icon {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          background: var(--primary-blue-soft);
+          color: var(--primary-blue-dark);
+          font-size: 1.4rem;
+        }
+
+        .context-text h3 {
+          margin-bottom: 6px;
+          color: var(--primary-blue-dark);
+          font-size: 1.5rem;
+          font-weight: 800;
+        }
+
+        .context-text p {
+          margin: 0;
+          color: #1f2937;
+          line-height: 1.7;
+          max-width: 500px;
+        }
+
+        .contact-title{
+          color: white;
+        }
+
+        footer {
+          text-align: center;
+          padding: 30px;
+          background: var(--primary-blue);
+          color: #fff;
+        }
+
+        footer a,
+        footer i,
+        footer .footer__text {
+          color: #fff;
+        }
+
+        footer hr {
+          border: 0;
+          height: 1px;
+          background: rgba(255, 255, 255, 0.3);
+          margin: 20px auto;
+          width: min(500px, 90%);
+        }
+
+        .description-projet{
+          margin-top: 10px;
+        }
+      </style>
+    </head>
+
+    <body>
+      <header>
+        <a class="back-btn" href="index.html" aria-label="Retour à l’accueil">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          <span>Accueil</span>
+        </a>
+
+        <div class="header-video load-hidden">
+          <video controls autoplay muted loop>
+            <source src="assets/demo.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+        </div>
+
+        <div class="header-content">
+          <h1 class="load-hidden">BEWAY Intranet</h1>
+          <p class="subtitle load-hidden">Application interne pour la gestion des congés et des annonces</p>
+          <p class="load-hidden description-projet">
+            BEWAY est une société de transport dans le secteur de la literie.
+            L'entreprise dispose de plusieurs services ainsi qu'un service
+            informatique. Le projet BEWAY Intranet a été développé pour
+            améliorer la communication interne et la gestion des congés.
+          </p>
+        </div>
+      </header>
+
+      <section class="project-context">
+        <div class="container">
+          <h2 class="section-title dark-blue-text" style="visibility: visible;">Contexte du projet</h2>
+          <p class="context-intro load-hidden">
+            Avant le développement de l'intranet, les process internes reposaient sur des supports dispersés.
+            L'objectif principal etait de centraliser les usages critiques dans un espace unique, fiable et simple.
+          </p>
+          <div class="context-list">
+            <article class="context-item load-hidden">
+              <div class="context-icon">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </div>
+              <div class="context-text">
+                <h3>Gestion des congés</h3>
+                <p>
+                  Les demandes de congés étaient faites par emails ou papier. Cela
+                  provoquait des erreurs, un manque de traçabilité et des retards.
+                </p>
+              </div>
+            </article>
+
+            <article class="context-item load-hidden">
+              <div class="context-icon">
+                <i class="fa fa-comments" aria-hidden="true"></i>
+              </div>
+              <div class="context-text">
+                <h3>Communication interne</h3>
+                <p>
+                  Les informations étaient dispersées entre emails, affiches et
+                  messages oraux, ce qui entraînait des oublis.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="intranet-projects">
+        <div class="container">
+          <div class="project-wrapper">
+            <h2 class="section-title dark-blue-text" style="visibility: visible;">Particularités du projet</h2>
+
+            <div class="row">
+              <div class="col-lg-4 col-sm-12">
+                <div class="project-wrapper__text load-hidden">
+                  <h3 class="project-wrapper__text-title">
+                    <span>S'assurer de l'identité de l'utilisateur</span>
+                  </h3>
+                  <div>
+                    <p class="mb-4">
+                      Mise en place d'un système d'authentification sécurisé pour identifier chaque utilisateur en
+                      s'appuyant sur un fichier <strong>Excel</strong> fourni par l'entreprise avec les coordonnées des salariés.
+                      L'objectif est de garantir que seuls les salariés puissent s'inscrire sur l'intranet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8 col-sm-12">
+                <div class="project-wrapper__image load-hidden">
+                  <div class="thumbnail rounded excel-thumb">
+                    <img src="assets/excel.jpg" alt="Fichier de reference collaborateurs pour valider les inscriptions" />
+                  </div>
+                  <p class="image-caption">Validation des inscriptions a partir des donnees internes</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4 col-sm-12">
+                <div class="project-wrapper__text load-hidden">
+                  <h3 class="project-wrapper__text-title">
+                    <span>S'assurer que les annonces soient lues</span>
+                  </h3>
+                  <div>
+                    <p class="mb-4">
+                      Un système de confirmation de lecture garantit que chaque annonce est effectivement consultée
+                      par les personnes concernées.
+                      Un ratio de vues permet aussi de mesurer la portée de chaque publication.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8 col-sm-12">
+                <div class="project-wrapper__image load-hidden">
+                  <div class="view-stack">
+                    <div class="view-card">
+                      <div class="thumbnail rounded">
+                        <img src="assets/lu-non-lu.png" alt="Indicateur lu et non lu des annonces" />
+                      </div>
+                    </div>
+                    <div class="view-card">
+                      <div class="thumbnail rounded">
+                        <img src="assets/nombre-vues.png" alt="Ratio de vues des annonces" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tech-environment">
+        <div class="container">
+          <h2 class="section-title dark-blue-text" style="visibility: visible;">Environnement technique</h2>
+          <p class="tech-intro load-hidden">
+            Une stack moderne et complémentaire pour garantir une interface fluide, une API solide,
+            une base de données évolutive et un niveau de securité adapté au contexte intranet.
+          </p>
+
+          <div class="context-list grid-2x2">
+            <article class="context-item load-hidden">
+              <div class="context-icon">
+                <i class="fa fa-code" aria-hidden="true"></i>
+              </div>
+              <div class="context-text">
+                <h3>Frontend</h3>
+                <p>
+                  <strong>React</strong> pour une interface utilisateur dynamique et réactive, associée à <strong>Tailwind CSS</strong> pour un design moderne et responsive.
+                </p>
+              </div>
+            </article>
+
+            <article class="context-item load-hidden">
+              <div class="context-icon">
+                <i class="fa fa-server" aria-hidden="true"></i>
+              </div>
+              <div class="context-text">
+                <h3>Backend</h3>
+                <p>
+                  <strong>Node.js</strong> et <strong>Express</strong> pour une <strong>API REST</strong> performante et scalable, offrant une architecture modulaire et maintenable.
+                </p>
+              </div>
+            </article>
+
+            <article class="context-item load-hidden">
+              <div class="context-icon">
+                <i class="fa fa-database" aria-hidden="true"></i>
+              </div>
+              <div class="context-text">
+                <h3>Base de données</h3>
+                <p>
+                  <strong>MongoDB</strong> pour une gestion flexible des données, offrant la scalabilité et la performance nécessaires.
+                </p>
+              </div>
+            </article>
+
+            <article class="context-item tech-security load-hidden">
+              <div class="context-icon">
+                <i class="fa fa-shield" aria-hidden="true"></i>
+              </div>
+              <div class="context-text">
+                <h3>Sécurité</h3>
+                <p>
+                  <strong>JWT</strong> pour l'authentification et <strong>Bcrypt</strong> pour le hachage des mots de passe, garantissant une sécurité maximale.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="db-schema">
+        <div class="container">
+          <h3 class="section-title dark-blue-text" style="visibility: visible;">Schéma des bases de données</h3>
+          <div class="db-schema-layout">
+            <div class="db-schema-text">
+              <p class="db-schema-intro load-hidden">
+                Le modèle de données s'organise autour de tables principales pour les entités métier,
+                complétées par des tables connexes dédiées à la gestion du contenu et du suivi de lecture.
+              </p>
+
+              <div class="db-schema-lists">
+                <div class="db-schema-group load-hidden">
+                  <h4>Tables principales</h4>
+                  <ul class="db-pill-list">
+                    <li><strong>Users</strong></li>
+                    <li><strong>Leaves</strong></li>
+                    <li><strong>Announcements</strong></li>
+                  </ul>
+                </div>
+                <div class="db-schema-group load-hidden">
+                  <h4>Tables connexes</h4>
+                  <ul class="db-pill-list">
+                    <li><strong>Announcement_content_blocks</strong></li>
+                    <li><strong>Announcement_reads</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="schema-image-wrap load-hidden">
+              <img src="assets/schema-bdd.png" alt="Schema des bases de donnees du projet intranet" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+          <section id="contact">
+      <div class="container">
+        <h2 class="section-title contact-title">Contact</h2>
+        <div class="contact-wrapper load-hidden">
+          <p class="contact-wrapper__text">Lecorrejules10@gmail.com</p>
+          <a
+            rel="noreferrer"
+            target="_blank"
+            class="cta-btn cta-btn--resume"
+            href="mailto:lecorrejules10@gmail.com"
+            >Me contacter</a
+          >
+        </div>
+      </div>
+      </section>
+
+      <footer class="footer navbar-static-bottom">
+        <div class="container">
+          <a rel="noreferrer" href="#top" class="back-to-top">
+            <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+          </a>
+          <div class="social-links">
+            <a
+              rel="noreferrer"
+              href="https://www.linkedin.com/in/jules-le-corre-4017a91b7/"
+              target="_blank"
+            >
+              <i class="fa fa-linkedin fa-inverse"></i>
+            </a>
+            <a
+              rel="noreferrer"
+              href="https://github.com/SA2N12"
+              target="_blank"
+            >
+              <i class="fa fa-github fa-inverse"></i>
+            </a>
+          </div>
+
+          <hr />
+
+          <!-- Notice: if you want to give me some credit, it will be huge for me! if not, put your data on it -->
+          <p class="footer__text">
+            © 2026 -
+            <a
+              rel="noreferrer"
+              href="https://github.com/cobiwave"
+              target="_blank"
+              >Jules Le Corre</a
+            >
+          </p>
+        </div>
+      </footer>
+    </body>
+  </html>
+  <body>
+    <script defer type="module" src="index.js"></script>
+  </body>
+</html>

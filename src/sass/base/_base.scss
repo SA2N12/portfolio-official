@@ -1,3 +1,13 @@
+:root {
+  --primary-blue: #{$primary-color};
+  --primary-blue-dark: #{$primary-color-dark};
+  --primary-blue-soft: #{$primary-color-soft};
+  --primary-blue-soft-2: #{$primary-color-soft-2};
+  --text-dark: #{$text-dark};
+  --context-accent: #{$context-accent};
+  --context-accent-soft: #{$context-accent-soft};
+}
+
 html {
   font-size: 62.5%;
 

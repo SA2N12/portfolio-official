@@ -5,8 +5,8 @@
   "description": "A clean, beautiful and responsive portfolio template for Developers!",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "start": "parcel src/index.html src/project-intranet.html src/beway-intranet/index.html",
+    "build": "parcel build src/index.html src/project-intranet.html src/beway-intranet/index.html"
   },
   "repository": {
     "type": "git",
