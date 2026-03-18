@@ -14,8 +14,6 @@
 
   @include respond(tab-land) {
     height: 100%;
-    -webkit-clip-path: none;
-    clip-path: none;
   }
 
   .about-wrapper {
