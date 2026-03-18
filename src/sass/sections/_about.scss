@@ -12,6 +12,12 @@
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   padding-bottom: 10%;
 
+  @include respond(phone) {
+    /* Remove diagonal clipping on small screens for a cleaner layout */
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+
   @include respond(tab-land) {
     height: 100%;
   }
