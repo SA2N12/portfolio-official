@@ -1,20 +1,29 @@
 // COLORS
-$primary-color: #003cff;
-$primary-color-dark: #003cff;
+$primary-color: #6366f1;
+$primary-color-dark: #4f46e5;
 $primary-color-soft: #dbeafe;
 $primary-color-soft-2: #eff6ff;
 
-$secondary-color: #2563eb;
+$secondary-color: #818cf8;
+$accent-color: #a78bfa;
 
-$white-color: #fff;
+$white-color: #F9F5F8;
 $text-dark: #0f172a;
-$context-accent: #0ea5e9;
-$context-accent-soft: #e0f2fe;
+$text-light: #94a3b8;
+$text-muted: #64748b;
 
 $dark-grey: #333333;
 $light-grey: #d2d2d2;
 
-$dark-blue-text: #272341; // For Headings
+$dark-blue-text: #272341;
+
+// Dark theme colors
+$bg-dark: #0a0a0f;
+$bg-dark-card: #12121a;
+$bg-dark-card-hover: #1a1a25;
+$bg-dark-elevated: #16161f;
+$bg-light: #f8fafc;
+$border-dark: rgba(255, 255, 255, 0.06);
 
 // FONT SIZE
 $default-font-size: 1.6rem;

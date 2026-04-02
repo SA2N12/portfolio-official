@@ -1,325 +1,326 @@
-<!--
-  Hello!
-  -
-  Simplefolio is a clean and responsive portfolio template for Developers!
-  Created by Jacobo Martinez.
-  -
-  Github Repo: https://github.com/cobiwave/simplefolio/
-  Readme: https://github.com/cobiwave/simplefolio/README.md
-  -
-  For business & inquires, contact me -> jacobojavier98@gmail.com
--->
 <!DOCTYPE html>
-<html lang="en" class="sr">
+<html lang="fr" class="sr">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 
-    <!-- Todo: put here your site title -->
-    <title>Jules Le Corre | Développeur</title>
-    <!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
-    <meta name="keywords" content="[username], [name], skill" />
-    <!-- Todo: improve your SEO by adding a small description of you -->
-    <meta name="description" content="[Your name here] | Developer" />
+    <title>Jules Le Corre | Développeur Web</title>
+    <meta name="keywords" content="jules le corre, développeur web, fullstack, react, symfony" />
+    <meta name="description" content="Jules Le Corre | Développeur Web Fullstack" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     />
     <link rel="stylesheet" href="styles.scss" />
     <script
       defer
       src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
     ></script>
-
-    <!-- Todo: remove the below script once you finish your portfolio -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
 
-  <!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
   <body>
     <div id="top"></div>
 
-    <!-- **** Hero Section **** -->
-    <section id="hero" class="jumbotron">
-      <div class="container">
-        <h1 class="hero-title load-hidden">
-          Salut, moi c'est <span class="text-color-main">Jules</span>
-          <br />
-          Je suis développeur web
-        </h1>
-        <p class="hero-cta load-hidden">
-          <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about"
-            >En savoir plus</a
-          >
-        </p>
+    <!-- **** Navbar **** -->
+    <nav class="site-nav">
+      <div class="site-nav__container">
+        <a href="#top" class="site-nav__logo">
+          <img src="assets/logo.png" alt="JC" class="site-nav__logo-img" />
+          <span>Jules Le Corre</span>
+        </a>
+        <ul class="site-nav__links">
+          <li><a href="#top" class="site-nav__link site-nav__link--active">Accueil</a></li>
+          <li><a href="#experience" class="site-nav__link">Expérience</a></li>
+          <li><a href="#projects" class="site-nav__link">Projets</a></li>
+          <li><a href="#contact" class="site-nav__link">Contact</a></li>
+        </ul>
+        <a href="#contact" class="site-nav__cta">Me Contacter</a>
       </div>
-    </section>
-    <!-- /END Hero Section -->
+    </nav>
+    <!-- /END Navbar -->
 
-    <!-- **** About Section **** -->
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title load-hidden">À propos</h2>
-        <div class="row about-wrapper">
-          <div class="col-md-6 col-sm-12">
-            <div class="about-wrapper__image load-hidden">
-              <img
-                alt="Profile Image"
-                class="img-fluid rounded shadow-lg"
-                height="auto"
-                width="300px"
-                src="assets/profile.png"
-                alt="Profile Image"
-              />
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div class="about-wrapper__info load-hidden">
-              <p class="about-wrapper__info-text">
-                Je suis un développeur web curieux et rigoureux, toujours motivé
-                pour apprendre de nouvelles technologies et relever des défis
-                techniques.
-              </p>
-              <p class="about-wrapper__info-text">
-                J'ai eu la chance de vivre 6 mois en Australie, où j'ai pu
-                découvrir de nouvelles cultures et développer mes compétences en
-                anglais.
-              </p>
-              <p class="about-wrapper__info-text">
-                À côté de ça je fais des créations en terre cuite, comme des
-                cendriers ou des support pour encens. C'est très médidatif et ça
-                me permet de me détendre après une journée de code intense.
-              </p>
-              <span class="d-flex mt-3">
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--resume"
-                  href="assets/resume.pdf"
-                >
-                  Voir mon CV
-                </a>
-              </span>
-            </div>
+    <!-- **** Hero Section **** -->
+    <section id="hero" class="hero">
+      <div class="hero__blob-blue"></div>
+      <div class="hero__container">
+        <div class="hero__content load-hidden">
+          <p class="hero__subtitle">DISPONIBLE POUR DE NOUVEAUX DÉFIS TECHNIQUES</p>
+          <h1 class="hero__title">
+            <span class="text-color-main">Salut, moi c'est Jules.</span><br />
+            Je suis développeur<br />web.
+          </h1>
+          <p class="hero__description">
+            Je maîtrise les technologies modernes et
+            transforme des défis complexes en solutions numériques fluides et
+            performantes.
+          </p>
+          <div class="hero__actions">
+            <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--primary" href="assets/resume.pdf">
+              Voir mon CV <span class="material-symbols-outlined">download</span>
+            </a>
+            <a rel="noreferrer" class="cta-btn cta-btn--outline" href="#projects">
+              Explorer mes projets
+            </a>
           </div>
         </div>
       </div>
     </section>
-    <!-- /END About Section -->
+    <!-- /END Hero Section -->
+
+    <!-- **** Experience Section **** -->
+    <section id="experience" class="experience">
+      <div class="container">
+        <div class="experience__header load-hidden">
+          <div class="experience__header-left">
+            <h2 class="experience__label">EXPÉRIENCE</h2>
+          </div>
+          <div class="experience__header-right">
+            <span class="experience__since">DÉVELOPPEUR WEB DEPUIS 2023</span>
+          </div>
+        </div>
+
+        <div class="experience__timeline">
+          <div class="experience__item load-hidden">
+            <div class="experience__date">2024 — Aujourd'hui</div>
+            <div class="experience__details">
+              <h3 class="experience__title">Développeur Web Freelance</h3>
+              <p class="experience__text">Interventions sur plusieurs projets (back-end, front-end, API).<br>Conception et développement d’applications web pour différents clients.</p>
+            </div>
+            <div class="experience__company">FREELANCE</div>
+          </div>
+
+          <div class="experience__item load-hidden">
+            <div class="experience__date">2025 — 2026</div>
+            <div class="experience__details">
+              <h3 class="experience__title">Développeur Web Fullstack (Stagiaire)</h3>
+              <p class="experience__text">Développement avec React d'une interface utilisateur pour les salariés, possibilité de visualiser les annonces sur une partie blog et de faire une/des demande(s) de congé.</p>
+            </div>
+            <div class="experience__company">BEWAY</div>
+          </div>
+
+          <div class="experience__item load-hidden">
+            <div class="experience__date">2023 — 2025</div>
+            <div class="experience__details">
+              <h3 class="experience__title">Développeur Wordpress / UI/UX Designer (Alternance)</h3>
+              <p class="experience__text">Développement d'un site vitrine et création d'un thème Wordpress.<br>Wireframing, prototypage et maquettage du site.</p>
+            </div>
+            <div class="experience__company">THERMIUP</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END Experience Section -->
 
     <!-- **** Projects Section **** -->
-    <section id="projects">
+    <section id="projects" class="projects">
       <div class="container">
-        <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Mes projets</h2>
+        <div class="projects__header load-hidden">
+          <span class="projects__label">PROJETS</span>
+          <h2 class="projects__title">Fullstack<br />& autres projets.</h2>
+          <p class="projects__description">
+            Sélection de quelques projets web que j'ai pu
+            réaliser sur différentes stack.
+          </p>
+        </div>
 
-          <!-- Notice: each .row is a project -->
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Beway Intranet</h3>
-                <div>
-                  <p class="mb-4">
-                    Beway Intranet est une application web interne permettant
-                    aux employés d’une entreprise de centraliser certaines
-                    fonctionnalités utiles au quotidien, comme la demande de
-                    congés ou encore la publication d'annonce pour les
-                    administrateurs. <br /><br />
-                    Ce projet m’a permis de travailler sur la gestion
-                    d’utilisateurs, la création d’API et l’interface d’un
-                    intranet moderne. <br /><br />
-                    Technologies utilisées : React, NodeJS, Express, MongoDB
-                  </p>
+        <div class="projects__grid">
+          <!-- Project 1: Sortir.com -->
+          <div class="project-card load-hidden">
+            <a rel="noreferrer" href="https://sortircom-v2-production.up.railway.app/" target="_blank" class="project-card__link">
+              <div class="project-card__image-wrapper">
+                <img
+                  alt="Sortir.com"
+                  class="project-card__image"
+                  src="assets/minia-sortir.com.png"
+                />
+              </div>
+              <div class="project-card__info">
+                <span class="material-symbols-outlined project-card__arrow">arrow_outward</span>
+                <h3 class="project-card__title">Sortir.com</h3>
+                <p class="project-card__text">
+                  Application web conçue pour permettre aux
+                  utilisateurs de créer et de s'inscrire à des sorties. 
+                  Les utilisateurs peuvent communiquer via une messagerie individuellement ou par groupe.
+                  Ils peuvent également enregistrer les sorties qui les intéressent pour plus tard ou s'inscrire directement.
+                </p>
+                <div class="project-card__tags">
+                  <span class="tag">SYMFONY</span>
+                  <span class="tag">DOCKER</span>
+                  <span class="tag">MYSQL</span>
                 </div>
-                <a
-                  rel="noreferrer"
-                  class="cta-btn cta-btn--hero"
-                  href="/beway-intranet/"
-                >
-                  Voir le projet
-                </a>
               </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="/beway-intranet/">
-                  <div
-                    data-tilt
-                    data-tilt-max="4"
-                    data-tilt-glare="true"
-                    data-tilt-max-glare="0.5"
-                    class="thumbnail rounded js-tilt"
-                  >
-                    <img
-                      alt="Project Image"
-                      class="img-fluid"
-                      src="assets/minia-intranet-2.png"
-                    />
-                  </div>
-                </a>
-              </div>
-            </div>
+            </a>
           </div>
-          <!-- /END Project -->
 
-          <!-- Notice: each .row is a project -->
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Sortir.com</h3>
-                <div>
-                  <p class="mb-4">
-                    Sortir.com est un site web applicatif conçu pour permettre
-                    aux utilisateurs de créer et de s’inscrire à des sorties. Il
-                    s’agit de l’un de mes premiers projets web. <br><br> Ce projet m’a
-                    permis de travailler sur le développement backend en
-                    utilisant le framework Symfony, ainsi que sur la gestion de
-                    base de données avec Doctrine. Il offre également une
-                    interface fonctionnelle permettant aux utilisateurs
-                    d’interagir facilement avec les événements proposés.<br><br>
-                    Technologies utilisées : Symfony, Docker, Doctrine, Railway,
-                    MySQL
-                  </p>
+          <!-- Project 2: Beway Intranet -->
+          <div class="project-card load-hidden">
+            <a rel="noreferrer" href="/beway-intranet/" class="project-card__link">
+              <div class="project-card__image-wrapper">
+                <img
+                  alt="Beway Intranet"
+                  class="project-card__image"
+                  src="assets/minia-intranet-2.png"
+                />
+              </div>
+              <div class="project-card__info">
+                <span class="material-symbols-outlined project-card__arrow">arrow_outward</span>
+                <h3 class="project-card__title">Beway Intranet</h3>
+                <p class="project-card__text">
+                  Une application web interne permettant aux employés
+                  de centraliser la gestion d'historique, les demandes de
+                  congés et la publication d'annonces.
+                </p>
+                <div class="project-card__tags">
+                  <span class="tag">REACT</span>
+                  <span class="tag">NODEJS</span>
+                  <span class="tag">EXPRESS</span>
+                  <span class="tag">MONGODB</span>
                 </div>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--hero"
-                  href="https://sortircom-v2-production.up.railway.app/"
-                >
-                  Voir le projet
-                </a>
               </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <a
-                  rel="noreferrer"
-                  href="https://sortircom-v2-production.up.railway.app/"
-                  target="_blank"
-                >
-                  <div
-                    data-tilt
-                    data-tilt-max="4"
-                    data-tilt-glare="true"
-                    data-tilt-max-glare="0.5"
-                    class="thumbnail rounded js-tilt"
-                  >
-                    <img
-                      alt="Project Image"
-                      class="img-fluid"
-                      src="assets/minia-sortir.com.png"
-                    />
-                  </div>
-                </a>
-              </div>
-            </div>
+            </a>
           </div>
-          <!-- /END Project -->
 
-          <!-- Notice: each .row is a project -->
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">ThermiUp</h3>
-                <div>
-                  <p class="mb-4">
-                    ThermiUp est un site web vitrine conçu pour présenter les
-                    services d’une entreprise spécialisée dans les solutions
-                    thermiques. Il s'agit de mon tout premier projet web.
-                    <br /><br />
-                    Ce projet m’a permis de travailler sur le développement
-                    backend en créant un thème wordpress personnalisé. Il permet
-                    également au propriétaire du site de gérer facilement le
-                    contenu via l’interface d’administration de Wordpress.
-                    <br /><br />
-                    Technologies utilisées : Wordpress, PHP, MySQL, Javascript
-                  </p>
+          <!-- Project 3: ThermiUp -->
+          <div class="project-card project-card--wide load-hidden">
+            <a rel="noreferrer" href="https://thermiup.fr/" target="_blank" class="project-card__link">
+              <div class="project-card__image-wrapper">
+                <img
+                  alt="Thermiup.fr"
+                  class="project-card__image"
+                  src="assets/minia-thermiup.png"
+                />
+              </div>
+              <div class="project-card__info">
+                <span class="material-symbols-outlined project-card__arrow">arrow_outward</span>
+                <h3 class="project-card__title">Thermiup.fr</h3>
+                <p class="project-card__text">
+                  Site vitrine conçu pour présenter les services d'une entreprise spécialisée dans les
+                  solutions thermiques. Le thème a été entièrement dévleloppé de A à Z, il permet à l'administrateur de poster des articles via le back office de wordpress qui s'adaptent au thème développé.
+                <div class="project-card__tags">
+                  <span class="tag">WORDPRESS</span>
+                  <span class="tag">PHP</span>
+                  <span class="tag">JAVASCRIPT</span>
+                  <span class="tag">MYSQL</span>
                 </div>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--hero"
-                  href="https://thermiup.fr/"
-                >
-                  Voir le projet
-                </a>
               </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div
-                    data-tilt
-                    data-tilt-max="4"
-                    data-tilt-glare="true"
-                    data-tilt-max-glare="0.5"
-                    class="thumbnail rounded js-tilt"
-                  >
-                    <img
-                      alt="Project Image"
-                      class="img-fluid"
-                      src="assets/minia-thermiup.png"
-                    />
-                  </div>
-                </a>
-              </div>
-            </div>
+            </a>
           </div>
-          <!-- /END Project -->
         </div>
       </div>
     </section>
     <!-- /END Projects Section -->
 
-    <!-- **** Contact Section **** -->
-    <section id="contact">
+    <!-- **** Contact CTA Section **** -->
+    <section class="contact-cta">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-wrapper load-hidden">
-          <p class="contact-wrapper__text">Lecorrejules10@gmail.com</p>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            class="cta-btn cta-btn--resume"
-            href="mailto:lecorrejules10@gmail.com"
-            >Me contacter</a
-          >
+        <div class="contact-cta__content load-hidden">
+          <h2 class="contact-cta__title">Vous avez un projet ?</h2>
+          <p class="contact-cta__text">
+            Je suis actuellement disponible pour de nouvelles
+            collaborations. Créons quelque chose de remarquable
+            ensemble.
+          </p>
+          <a rel="noreferrer" href="#contact" class="cta-btn cta-btn--primary">
+            Lancer une Conversation
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /END Contact CTA -->
+
+    <!-- **** Contact Section **** -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact__header load-hidden">
+          <h2 class="contact__section-title">Débuter<br>une conversation.</h2>
+          <p class="contact__section-subtitle">Si vous avez un projet spécifique en tête ou que vous souhaitez explorer de nouvelles possibilités, je suis là pour traduire votre vision en une solution digitale.</p>
+        </div>
+        <div class="contact__grid">
+          <div class="contact__form-col load-hidden">
+            <form class="contact__form" action="https://formspree.io/f/xykbdjkd" method="POST">
+              <div class="contact__form-row">
+                <div class="contact__form-group">
+                  <label for="name">PRÉNOM, NOM</label>
+                  <input type="text" id="name" name="name" placeholder="Votre nom complet" />
+                </div>
+                <div class="contact__form-group">
+                  <label for="email">ADRESSE EMAIL</label>
+                  <input type="email" id="email" name="email" placeholder="votre@email.com" />
+                </div>
+              </div>
+              <div class="contact__form-group">
+                <label for="subject">SUJET</label>
+                <select id="subject" name="subject">
+                  <option>Conception de projet</option>
+                  <option>Correction de bug</option>
+                  <option>Recrutement</option>
+                  <option>Autres</option>
+                </select>
+              </div>
+              <div class="contact__form-group">
+                <label for="message">MESSAGE</label>
+                <textarea id="message" name="message" rows="5" placeholder="Parlez moi de votre projet"></textarea>
+              </div>
+              <button type="submit" class="cta-btn cta-btn--primary">
+                Envoyer Message
+              </button>
+              <p class="contact__form-status"></p>
+            </form>
+          </div>
+          <div class="contact__info-col load-hidden">
+            <div class="contact__info-block">
+              <div class="contact__info-icon">
+                <span class="material-symbols-outlined">alternate_email</span>
+              </div>
+              <div>
+                <span class="contact__info-label">EMAIL</span>
+                <a href="mailto:lecorrejules10@gmail.com">lecorrejules10@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact__info-block">
+              <div class="contact__info-icon contact__info-icon--location">
+                <span class="material-symbols-outlined">location_on</span>
+              </div>
+              <div>
+                <span class="contact__info-label">BASÉ SUR</span>
+                <p>Paris, 75014</p>
+              </div>
+            </div>
+            <div class="contact__social-section">
+              <h3 class="contact__social-title">Sur les réseaux</h3>
+              <div class="contact__socials">
+                <a rel="noreferrer" href="https://www.linkedin.com/in/jules-le-corre-4017a91b7/" target="_blank" class="contact__social-btn">
+                  LinkedIn
+                </a>
+                <a rel="noreferrer" href="https://github.com/SA2N12" target="_blank" class="contact__social-btn">
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
     <!-- /END Contact Section -->
 
     <!-- **** Footer Section **** -->
-    <footer class="footer navbar-static-bottom">
+    <footer class="footer">
       <div class="container">
-        <a rel="noreferrer" href="#top" class="back-to-top">
-          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
-        </a>
-        <div class="social-links">
-          <a
-            rel="noreferrer"
-            href="https://www.linkedin.com/in/jules-le-corre-4017a91b7/"
-            target="_blank"
-          >
-            <i class="fa fa-linkedin fa-inverse"></i>
-          </a>
-          <a rel="noreferrer" href="https://github.com/SA2N12" target="_blank">
-            <i class="fa fa-github fa-inverse"></i>
-          </a>
+        <p class="footer__name">JULES LE CORRE</p>
+        <div class="footer__links">
+          <a rel="noreferrer" href="mailto:lecorrejules10@gmail.com">EMAIL</a>
+          <a rel="noreferrer" href="https://www.linkedin.com/in/jules-le-corre-4017a91b7/" target="_blank">LINKEDIN</a>
+          <a rel="noreferrer" href="https://github.com/SA2N12" target="_blank">GITHUB</a>
         </div>
-
-        <hr />
-
-        <!-- Notice: if you want to give me some credit, it will be huge for me! if not, put your data on it -->
         <p class="footer__text">
-          © 2026 -
-          <a rel="noreferrer" href="https://github.com/cobiwave" target="_blank"
-            >Jules Le Corre</a
-          >
+          © 2025 Jules Le Corre | Developeur + Web Passionné
         </p>
       </div>
     </footer>

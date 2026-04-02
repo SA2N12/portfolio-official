@@ -1,0 +1,109 @@
+.experience {
+  padding: 10rem 0 6rem;
+  background: #000;
+  position: relative;
+  z-index: 2;
+  font-family: "Inter", sans-serif;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6rem;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 0 1.6rem;
+    background: linear-gradient(to right, #B6A0FF, #00AFFE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(to right, #B6A0FF, #00AFFE) 1;
+  }
+
+  &__since {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: $text-muted;
+  }
+
+  &__timeline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 18rem 1fr auto;
+    gap: 3rem;
+    padding: 5rem 0;
+    border-top: 1px solid $border-dark;
+    align-items: start;
+
+    &:last-child {
+      border-bottom: 1px solid $border-dark;
+    }
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  &__date {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $text-muted;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  &__details {
+    max-width: 60rem;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $white-color;
+    margin: 0 0 0.8rem;
+    text-align: left;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: $text-light;
+    margin: 0;
+    text-align: left;
+  }
+
+  &__company {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    text-align: right;
+    background: linear-gradient(to right, #B6A0FF, #00AFFE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @include respond(tab-port) {
+      text-align: left;
+    }
+  }
+}

@@ -1,15 +1,6 @@
-:root {
-  --primary-blue: #{$primary-color};
-  --primary-blue-dark: #{$primary-color-dark};
-  --primary-blue-soft: #{$primary-color-soft};
-  --primary-blue-soft-2: #{$primary-color-soft-2};
-  --text-dark: #{$text-dark};
-  --context-accent: #{$context-accent};
-  --context-accent-soft: #{$context-accent-soft};
-}
-
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 
   &.sr .load-hidden {
     visibility: hidden;
@@ -17,21 +8,72 @@ html {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Manrope", sans-serif;
   text-align: center;
-  scroll-behavior: smooth;
+  background-color: $bg-dark;
+  color: $white-color;
+  margin: 0;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 50rem;
+    height: 50rem;
+    background: rgba(#B6A0FF, 0.18);
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: 0;
+    animation: blob-drift-1 12s ease-in-out infinite;
+  }
+
+  &::after {
+    content: "";
+    position: fixed;
+    top: 20%;
+    right: 5%;
+    width: 30rem;
+    height: 30rem;
+    background: rgba(#FF7350, 0.1);
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 0;
+    animation: blob-drift-2 15s ease-in-out infinite;
+  }
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3rem;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: $bg-dark;
 }
 ::-webkit-scrollbar-thumb {
-  background: $light-grey;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: $primary-color;

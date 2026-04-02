@@ -8,69 +8,75 @@ export const defaultProps = {
 
 export const targetElements = [
   {
-    element: ".section-title",
+    element: ".hero__content",
     animation: {
       delay: 300,
-      distance: "0px",
-      origin: "bottom",
-    },
-  },
-  {
-    element: ".hero-title",
-    animation: {
-      delay: 500,
       origin: window.innerWidth > 768 ? "left" : "bottom",
     },
   },
   {
-    element: ".hero-cta",
-    animation: {
-      delay: 1000,
-      origin: window.innerWidth > 768 ? "left" : "bottom",
-    },
-  },
-  {
-    element: ".about-wrapper__image",
+    element: ".hero__visual",
     animation: {
       delay: 600,
-      origin: "bottom",
-    },
-  },
-  {
-    element: ".about-wrapper__info",
-    animation: {
-      delay: 1000,
-      origin: window.innerWidth > 768 ? "left" : "bottom",
-    },
-  },
-  {
-    element: ".project-wrapper__text",
-    animation: {
-      delay: 500,
-      origin: window.innerWidth > 768 ? "left" : "bottom",
-    },
-  },
-  {
-    element: ".project-wrapper__image",
-    animation: {
-      delay: 1000,
       origin: window.innerWidth > 768 ? "right" : "bottom",
     },
   },
   {
-    element: ".contact-wrapper",
+    element: ".experience__header",
     animation: {
-      delay: 800,
+      delay: 400,
       origin: "bottom",
     },
   },
   {
-    element: ".load-hidden",
+    element: ".experience__item",
     animation: {
-      delay: 200,
-      distance: "30px",
+      delay: 500,
       origin: "bottom",
-      interval: 100,
+      interval: 200,
+    },
+  },
+  {
+    element: ".projects__header",
+    animation: {
+      delay: 300,
+      origin: "bottom",
+    },
+  },
+  {
+    element: ".project-card",
+    animation: {
+      delay: 400,
+      origin: "bottom",
+      interval: 200,
+    },
+  },
+  {
+    element: ".contact-cta__content",
+    animation: {
+      delay: 400,
+      origin: "bottom",
+    },
+  },
+  {
+    element: ".contact__header",
+    animation: {
+      delay: 300,
+      origin: "bottom",
+    },
+  },
+  {
+    element: ".contact__form-col",
+    animation: {
+      delay: 400,
+      origin: window.innerWidth > 768 ? "left" : "bottom",
+    },
+  },
+  {
+    element: ".contact__info-col",
+    animation: {
+      delay: 600,
+      origin: window.innerWidth > 768 ? "right" : "bottom",
     },
   },
 ];
