@@ -103,6 +103,14 @@
       }
       .site-nav__link:hover, .site-nav__link--active { color: #A78BFA; }
       .site-nav__link--active { border-bottom: 2px solid #A78BFA; }
+      .site-nav__toggle {
+        display: none; background: none; border: none; cursor: pointer;
+        padding: 0.5rem; justify-self: end; position: relative; z-index: 1001;
+      }
+      .site-nav__toggle span {
+        display: block; width: 2.4rem; height: 2px;
+        background: #F9F5F8; margin: 5px 0; transition: all 0.3s; border-radius: 2px;
+      }
       .site-nav__cta {
         justify-self: end; background: #B6A0FF; color: #000;
         font-family: "Inter", sans-serif; font-size: 1.3rem; font-weight: 600;
@@ -252,7 +260,7 @@
       .contact { padding: 6rem 0 10rem; background: #000; position: relative; z-index: 2; }
       .contact__header { margin-bottom: 5rem; text-align: left; }
       .contact__section-title {
-        font-family: "Manrope", sans-serif; font-size: 6rem; font-weight: 800;
+        font-family: "Manrope", sans-serif; font-size: clamp(3.2rem, 8vw, 6rem); font-weight: 800;
         line-height: 1.05; margin-bottom: 2rem;
         background: linear-gradient(90deg, #F9F5F8 0%, #ADAAAD 100%);
         -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
@@ -329,20 +337,35 @@
       .project-footer__links a:hover { color: #6366f1; }
       .project-footer__text { color: #64748b; font-size: 1.2rem; }
 
+      .site-nav--open { bottom: 0; background: rgba(9, 9, 11, 0.98); }
+      .site-nav--open .site-nav__links {
+        display: flex !important; flex-direction: column;
+        position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        padding: 10rem 4rem 4rem; gap: 3rem;
+        align-items: center; justify-content: center;
+      }
+      .site-nav--open .site-nav__links li a { font-size: 2.4rem; font-weight: 600; color: #F9F5F8; }
+
       /* Responsive */
       @media (max-width: 768px) {
         .site-nav__links, .site-nav__cta { display: none; }
-        .site-nav__container { grid-template-columns: 1fr; }
+        .site-nav__container { grid-template-columns: 1fr 1fr; }
+        .site-nav__logo span { display: none; }
+        .site-nav__toggle { display: block; }
         .header-grid { grid-template-columns: 1fr; gap: 4rem; }
         .header-content h1 { font-size: 3.6rem; }
         .context-grid, .tech-grid { grid-template-columns: 1fr 1fr; }
         @media (max-width: 600px) { .tech-grid { grid-template-columns: 1fr; } }
         .overview-grid { grid-template-columns: 1fr; }
         .overview-cards { grid-template-columns: 1fr; }
+        .contact__grid { grid-template-columns: 1fr; gap: 4rem; }
         .feature-row { grid-template-columns: 1fr; gap: 3rem; }
         .schema-layout { grid-template-columns: 1fr; }
         .view-stack { min-height: auto; display: grid; gap: 1.6rem; }
         .view-stack .view-card { position: static; width: 100%; transform: none !important; }
+        .section-title { font-size: clamp(2.4rem, 6vw, 3.6rem); text-align: center; }
+        .section-subtitle { text-align: center; }
+        .overview-desc { text-align: center; }
       }
     </style>
   </head>
@@ -367,6 +390,11 @@
           <li><a href="#contact" class="site-nav__link">Contact</a></li>
         </ul>
         <a href="#contact" class="site-nav__cta">Me Contacter</a>
+        <button class="site-nav__toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
 
@@ -581,7 +609,23 @@
       </div>
     </footer>
     <script>
+      // Mobile burger toggle
+      const navToggle = document.querySelector('.site-nav__toggle');
+      const siteNav = document.querySelector('.site-nav');
+      if (navToggle && siteNav) {
+        navToggle.addEventListener('click', () => {
+          siteNav.classList.toggle('site-nav--open');
+        });
+      }
+
       const navLinks = document.querySelectorAll('.site-nav__link');
+      // Close mobile nav on link click
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (siteNav) siteNav.classList.remove('site-nav--open');
+        });
+      });
+
       const navIds = Array.from(navLinks).map(l => l.getAttribute('href').replace('#', ''));
       const sections = navIds.map(id => document.getElementById(id)).filter(Boolean);
       window.addEventListener('scroll', () => {

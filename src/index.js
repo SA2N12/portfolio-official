@@ -8,16 +8,17 @@ initTiltEffect();
 // Mobile navbar toggle
 const navToggle = document.querySelector(".site-nav__toggle");
 const navLinks = document.querySelector(".site-nav__links");
-if (navToggle && navLinks) {
+const siteNav = document.querySelector(".site-nav");
+if (navToggle && navLinks && siteNav) {
   navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+    siteNav.classList.toggle("site-nav--open");
   });
 }
 
 // Close mobile nav on link click
 document.querySelectorAll(".site-nav__link").forEach((link) => {
   link.addEventListener("click", () => {
-    if (navLinks) navLinks.classList.remove("active");
+    if (siteNav) siteNav.classList.remove("site-nav--open");
   });
 });
 
