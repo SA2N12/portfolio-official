@@ -2,6 +2,38 @@ import initScrollReveal from "./scripts/scrollReveal";
 import initTiltEffect from "./scripts/tiltAnimation";
 import { targetElements, defaultProps } from "./data/scrollRevealConfig";
 
+// --- Random color palette on each page load ---
+function hslToRgb(h, s, l) {
+  s /= 100;
+  l /= 100;
+  const k = (n) => (n + h / 30) % 12;
+  const a = s * Math.min(l, 1 - l);
+  const f = (n) => l - a * Math.max(-1, Math.min(k(n) - 3, 9 - k(n), 1));
+  return [Math.round(f(0) * 255), Math.round(f(8) * 255), Math.round(f(4) * 255)];
+}
+
+function applyRandomPalette() {
+  const hue = Math.floor(Math.random() * 360);
+
+  const colors = {
+    "--color-primary":        { h: hue, s: 100, l: 72 },
+    "--color-primary-dark":   { h: hue, s: 100, l: 56 },
+    "--color-primary-medium": { h: hue, s: 80,  l: 59 },
+    "--color-secondary":      { h: (hue + 20) % 360, s: 90, l: 60 },
+    "--color-accent-warm":    { h: (hue + 35) % 360, s: 100, l: 66 },
+  };
+
+  const root = document.documentElement;
+  for (const [prop, { h, s, l }] of Object.entries(colors)) {
+    const [r, g, b] = hslToRgb(h, s, l);
+    root.style.setProperty(prop, `rgb(${r}, ${g}, ${b})`);
+    root.style.setProperty(`${prop}-rgb`, `${r}, ${g}, ${b}`);
+  }
+}
+
+applyRandomPalette();
+// --- End random palette ---
+
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
 
@@ -11,14 +43,25 @@ const navLinks = document.querySelector(".site-nav__links");
 const siteNav = document.querySelector(".site-nav");
 if (navToggle && navLinks && siteNav) {
   navToggle.addEventListener("click", () => {
-    siteNav.classList.toggle("site-nav--open");
+    if (siteNav.classList.contains("site-nav--open")) {
+      siteNav.classList.add("site-nav--closing");
+      siteNav.classList.remove("site-nav--open");
+      setTimeout(() => siteNav.classList.remove("site-nav--closing"), 550);
+    } else {
+      siteNav.classList.remove("site-nav--closing");
+      siteNav.classList.add("site-nav--open");
+    }
   });
 }
 
 // Close mobile nav on link click
 document.querySelectorAll(".site-nav__link").forEach((link) => {
   link.addEventListener("click", () => {
-    if (siteNav) siteNav.classList.remove("site-nav--open");
+    if (siteNav && siteNav.classList.contains("site-nav--open")) {
+      siteNav.classList.add("site-nav--closing");
+      siteNav.classList.remove("site-nav--open");
+      setTimeout(() => siteNav.classList.remove("site-nav--closing"), 550);
+    }
   });
 });
 
@@ -52,6 +95,16 @@ window.addEventListener("scroll", () => {
         link.classList.add("site-nav__link--active");
       }
     });
+  }
+
+  // Back to top button visibility
+  const backToTop = document.querySelector(".back-to-top");
+  if (backToTop) {
+    if (window.scrollY > 400) {
+      backToTop.classList.add("back-to-top--visible");
+    } else {
+      backToTop.classList.remove("back-to-top--visible");
+    }
   }
 });
 

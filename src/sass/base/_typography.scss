@@ -35,14 +35,14 @@ a:hover {
 }
 
 .text-color-main {
-  color: #B6A0FF;
-  -webkit-text-fill-color: #B6A0FF;
+  color: var(--color-primary);
+  -webkit-text-fill-color: var(--color-primary);
 
   @supports (-webkit-background-clip: text) or (background-clip: text) {
     background-image: linear-gradient(
       to right,
-      #B6A0FF 0%,
-      #00AFFE 100%
+      var(--color-primary) 0%,
+      var(--color-secondary) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

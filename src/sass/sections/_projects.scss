@@ -19,7 +19,7 @@
     text-transform: uppercase;
     display: block;
     margin-bottom: 1.6rem;
-    background: linear-gradient(to right, #B6A0FF, #00AFFE);
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -130,7 +130,7 @@
     position: absolute;
     top: 2.4rem;
     right: 2.4rem;
-    color: #B6A0FF;
+    color: var(--color-primary);
     font-size: 2rem;
   }
 

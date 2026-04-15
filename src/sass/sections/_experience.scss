@@ -24,13 +24,13 @@
     text-transform: uppercase;
     display: inline-block;
     margin: 0 0 1.6rem;
-    background: linear-gradient(to right, #B6A0FF, #00AFFE);
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     padding-bottom: 0.8rem;
     border-bottom: 2px solid transparent;
-    border-image: linear-gradient(to right, #B6A0FF, #00AFFE) 1;
+    border-image: linear-gradient(to right, var(--color-primary), var(--color-secondary)) 1;
   }
 
   &__since {
@@ -97,7 +97,7 @@
     letter-spacing: 0.1em;
     white-space: nowrap;
     text-align: right;
-    background: linear-gradient(to right, #B6A0FF, #00AFFE);
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -106,4 +106,61 @@
       text-align: left;
     }
   }
+
+  // Skills marquee
+  &__skills {
+    margin-top: 0;
+    padding: 0 0 8rem;
+  }
+
+  &__skills-header {
+    text-align: left;
+    margin-bottom: 4rem;
+  }
+
+  &__marquee {
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    margin-bottom: 2rem;
+
+    &--reverse &-track {
+      animation-direction: reverse;
+    }
+  }
+
+  &__marquee-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: marquee-scroll 30s linear infinite;
+  }
+
+  &__skill {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $white-color;
+    background: rgba(#262528, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 1.2rem 2.4rem;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+
+  &__skill-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+    flex-shrink: 0;
+  }
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

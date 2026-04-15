@@ -38,6 +38,7 @@
         <ul class="site-nav__links">
           <li><a href="#top" class="site-nav__link site-nav__link--active">Accueil</a></li>
           <li><a href="#experience" class="site-nav__link">Expérience</a></li>
+          <li><a href="#skills" class="site-nav__link">Compétences</a></li>
           <li><a href="#projects" class="site-nav__link">Projets</a></li>
           <li><a href="#contact" class="site-nav__link">Contact</a></li>
         </ul>
@@ -56,13 +57,13 @@
       <div class="hero__blob-blue"></div>
       <div class="hero__container">
         <div class="hero__content load-hidden">
-          <p class="hero__subtitle">DISPONIBLE POUR DE NOUVEAUX DÉFIS TECHNIQUES</p>
+          <p class="hero__subtitle"><span class="hero__radar"></span>DISPONIBLE POUR DE NOUVEAUX PROJETS</p>
           <h1 class="hero__title">
-            <span class="text-color-main">Salut, moi c'est Jules.</span><br />
-            Je suis développeur<br />web.
+            Salut, moi c'est <span class="text-color-main">Jules</span>.
+            <strong class="hero__role">Développeur web.</strong>
           </h1>
           <p class="hero__description">
-            Je maîtrise les technologies modernes et
+            <span class="hero__description-mobile">Je suis <strong>développeur web</strong> et je maîtrise</span><span class="hero__description-desktop">Je maîtrise</span> les technologies modernes et
             transforme des défis complexes en solutions numériques fluides et
             performantes.
           </p>
@@ -87,7 +88,7 @@
             <h2 class="experience__label">EXPÉRIENCE</h2>
           </div>
           <div class="experience__header-right">
-            <span class="experience__since">DÉVELOPPEUR WEB DEPUIS 2023</span>
+            <span class="experience__since">DÉVELOPPEUR WEB DEPUIS 2022</span>
           </div>
         </div>
 
@@ -122,6 +123,56 @@
       </div>
     </section>
     <!-- /END Experience Section -->
+
+    <!-- **** Skills Section **** -->
+    <section id="skills" class="experience">
+      <div class="container">
+        <div class="experience__skills">
+          <div class="experience__skills-header load-hidden">
+            <h2 class="experience__label">COMPÉTENCES</h2>
+          </div>
+          <div class="experience__marquee load-hidden">
+            <div class="experience__marquee-track">
+              <span class="experience__skill"><span class="experience__skill-dot"></span>React</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Symfony</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Node.js</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>PHP</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>WordPress</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>MongoDB</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>MySQL</span>
+              <!-- duplicated for seamless loop -->
+              <span class="experience__skill"><span class="experience__skill-dot"></span>React</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Symfony</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Node.js</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>PHP</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>WordPress</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>MongoDB</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>MySQL</span>
+            </div>
+          </div>
+          <div class="experience__marquee experience__marquee--reverse load-hidden">
+            <div class="experience__marquee-track">
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Docker</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Express</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>JavaScript</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>TypeScript</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Tailwind CSS</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>UI/UX Design</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Git</span>
+              <!-- duplicated for seamless loop -->
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Docker</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Express</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>JavaScript</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>TypeScript</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Tailwind CSS</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>UI/UX Design</span>
+              <span class="experience__skill"><span class="experience__skill-dot"></span>Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END Skills Section -->
 
     <!-- **** Projects Section **** -->
     <section id="projects" class="projects">
@@ -330,6 +381,11 @@
       </div>
     </footer>
     <!-- /END Footer Section -->
+
+    <!-- Back to top button -->
+    <a href="#top" class="back-to-top" aria-label="Retour en haut">
+      <span class="material-symbols-outlined">keyboard_arrow_up</span>
+    </a>
 
     <script defer type="module" src="index.js"></script>
   </body>

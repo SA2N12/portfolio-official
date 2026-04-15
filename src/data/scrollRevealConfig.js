@@ -37,6 +37,21 @@ export const targetElements = [
     },
   },
   {
+    element: ".experience__skills-header",
+    animation: {
+      delay: 300,
+      origin: "bottom",
+    },
+  },
+  {
+    element: ".experience__marquee",
+    animation: {
+      delay: 400,
+      origin: "bottom",
+      interval: 200,
+    },
+  },
+  {
     element: ".projects__header",
     animation: {
       delay: 300,

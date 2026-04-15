@@ -6,11 +6,49 @@
   z-index: 1000;
   background: rgba(#09090B, 0.6);
   backdrop-filter: blur(12px);
-  transition: all 0.3s;
+  transition: background 0.3s ease;
 
   &--open {
     bottom: 0;
     background: rgba(#09090B, 0.98);
+    transition: background 0.3s;
+  }
+
+  &--closing {
+    bottom: 0;
+    pointer-events: none;
+  }
+
+  &--closing &__links {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10rem 4rem 4rem;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      animation: nav-item-slide-out 0.3s ease forwards;
+      will-change: opacity, transform;
+      transform: translateZ(0);
+
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{($i - 1) * 0.05}s;
+        }
+      }
+    }
+
+    li a {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: $white-color;
+    }
   }
 
   &--open &__links {
@@ -25,6 +63,18 @@
     gap: 3rem;
     align-items: center;
     justify-content: center;
+    animation: nav-fade-in 0.4s ease forwards;
+
+    li {
+      opacity: 0;
+      animation: nav-item-slide 0.4s ease forwards;
+
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{0.1 + $i * 0.08}s;
+        }
+      }
+    }
 
     li a {
       font-size: 2.4rem;
@@ -33,11 +83,43 @@
     }
   }
 
+  @keyframes nav-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes nav-fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  @keyframes nav-item-slide {
+    from {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes nav-item-slide-out {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-1.5rem);
+    }
+  }
+
   &__container {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 1.2rem 4rem;
+    padding: 1.8rem 4rem;
   }
 
   &__logo {
@@ -49,12 +131,6 @@
     font-weight: 600;
     white-space: nowrap;
     justify-self: start;
-
-    span {
-      @include respond(phone) {
-        display: none;
-      }
-    }
 
     &-img {
       height: 2.4rem;
@@ -84,18 +160,18 @@
     border-bottom: 2px solid transparent;
 
     &:hover {
-      color: #A78BFA;
+      color: var(--color-primary-medium);
     }
 
     &--active {
-      color: #A78BFA;
-      border-bottom: 2px solid #A78BFA;
+      color: var(--color-primary-medium);
+      border-bottom: 2px solid var(--color-primary-medium);
     }
   }
 
   &__cta {
     justify-self: end;
-    background: #B6A0FF;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
     color: #000;
     font-family: "Inter", sans-serif;
     font-size: 1.3rem;
@@ -104,11 +180,12 @@
     border-radius: 8px;
     transition: all 0.3s;
     white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(var(--color-primary-dark-rgb), 0.3);
 
     &:hover {
-      background: darken(#B6A0FF, 10%);
       color: #000;
       transform: translateY(-1px);
+      box-shadow: 0 6px 30px rgba(var(--color-primary-dark-rgb), 0.4);
     }
 
     @include respond(phone) {
@@ -125,19 +202,50 @@
     justify-self: end;
     position: relative;
     z-index: 1001;
+    width: 3rem;
+    height: 2.4rem;
 
     span {
       display: block;
       width: 2.4rem;
       height: 2px;
       background: $white-color;
-      margin: 5px 0;
-      transition: all 0.3s;
       border-radius: 2px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.3s ease;
+
+      &:nth-child(1) {
+        top: 0.2rem;
+      }
+      &:nth-child(2) {
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &:nth-child(3) {
+        bottom: 0.2rem;
+      }
     }
 
     @include respond(phone) {
       display: block;
+    }
+  }
+
+  &--open &__toggle {
+    span:nth-child(1) {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+      transform: translate(-50%, -50%) scaleX(0);
+    }
+    span:nth-child(3) {
+      bottom: auto;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
 

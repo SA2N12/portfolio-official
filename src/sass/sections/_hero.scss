@@ -1,3 +1,14 @@
+@keyframes radar-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
 @keyframes blob-drift-1 {
   0%, 100% {
     transform: translate(0, 0) scale(1);
@@ -57,7 +68,7 @@
     right: 10%;
     width: 40rem;
     height: 50rem;
-    background: rgba(#00AFFE, 0.18);
+    background: rgba(var(--color-secondary-rgb), 0.18);
     border-radius: 50%;
     filter: blur(120px);
     pointer-events: none;
@@ -73,52 +84,106 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
   }
 
   &__content {
-    text-align: center;
+    text-align: left;
   }
 
   &__subtitle {
     font-family: "Inter", sans-serif;
-    font-size: 1.2rem;
+    font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: 0.2em;
-    color: #9C7EFF;
+    color: var(--color-primary-medium);
     margin-bottom: 2rem;
     text-transform: uppercase;
-    display: inline-block;
-    background: rgba(#262528, 0.4);
-    padding: 0.8rem 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.5rem 1.4rem;
     border-radius: 50px;
-    border: 1px solid rgba(#48474A, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     max-width: 100%;
     box-sizing: border-box;
 
     @include respond(phone) {
       font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      padding: 0.7rem 1.4rem;
+      letter-spacing: 0.12em;
+      padding: 0.5rem 1.2rem;
+      gap: 0.6rem;
+    }
+  }
+
+  &__radar {
+    position: relative;
+    width: 0.6rem;
+    height: 0.6rem;
+    flex-shrink: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--color-primary-medium);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--color-primary-medium);
+      transform-origin: center;
+      opacity: 0;
+      animation: radar-ping 1.2s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
   }
 
   &__title {
-    font-size: 7.2rem;
+    font-size: 9.2rem;
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 2.4rem;
     color: $white-color;
 
     @include respond(tab-land) {
-      font-size: 5.6rem;
+      font-size: 7.2rem;
     }
     @include respond(tab-port) {
-      font-size: 4.5rem;
+      font-size: 5.6rem;
     }
     @include respond(phone) {
-      font-size: 3.2rem;
+      font-size: 5.6rem;
+    }
+  }
+
+  &__role {
+    display: block;
+    font-weight: 800;
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__description-mobile {
+    display: none;
+
+    @include respond(phone) {
+      display: inline;
+    }
+  }
+
+  &__description-desktop {
+    @include respond(phone) {
+      display: none;
     }
   }
 
@@ -127,14 +192,14 @@
     line-height: 1.7;
     color: $text-light;
     max-width: 60rem;
-    margin: 0 auto 3.2rem;
+    margin: 0 0 3.2rem;
   }
 
   &__actions {
     display: flex;
     gap: 1.6rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   &__visual {
