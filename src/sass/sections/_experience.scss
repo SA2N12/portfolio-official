@@ -114,15 +114,16 @@
   }
 
   &__skills-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 4rem;
   }
 
   &__marquee {
     overflow: hidden;
-    width: 100%;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     margin-bottom: 2rem;
 
     &--reverse &-track {
@@ -141,12 +142,12 @@
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 500;
     color: $white-color;
     background: rgba(#262528, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 1.2rem 2.4rem;
+    padding: 1.6rem 3rem;
     border-radius: 8px;
     white-space: nowrap;
   }

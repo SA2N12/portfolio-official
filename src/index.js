@@ -142,3 +142,15 @@ if (contactForm) {
     btn.textContent = "Envoyer Message";
   });
 }
+
+// Marquee slow on hover (smooth via playbackRate)
+document.querySelectorAll(".experience__marquee").forEach((marquee) => {
+  const track = marquee.querySelector(".experience__marquee-track");
+  if (!track) return;
+  marquee.addEventListener("mouseenter", () => {
+    track.getAnimations().forEach((a) => (a.playbackRate = 0.3));
+  });
+  marquee.addEventListener("mouseleave", () => {
+    track.getAnimations().forEach((a) => (a.playbackRate = 1));
+  });
+});
